@@ -1,8 +1,9 @@
 import React from "react";
+import SideBar from "../SideBar/SideBar";
 
 const SingleBlog = (props) => {
+  const addData = props.addData;
   const { photo, author, userPhoto, title, time } = props.singleData;
-
   return (
     <div>
       <div className="card card-compact w-[800px] mx-auto bg-base-100 shadow-xl">
@@ -31,9 +32,9 @@ const SingleBlog = (props) => {
             </p>
           </div>
           <div className="card-actions">
-            <a href="" className="text-blue-400 font-bold my-3">
+            <p onClick={() => addData(props.singleData)} className="text-blue-400 font-bold my-3 cursor-pointer">
               Mark as read
-            </a>
+            </p>
           </div>
         </div>
       </div>
