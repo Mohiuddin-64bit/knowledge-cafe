@@ -31,12 +31,12 @@ const Blog = () => {
             <div className="border-2 border-cyan-400 h-16 w-full bg-gray-100 ">
               <h2 className="text-2xl text-cyan-500 font-bold text-center">Spent Time on Reading: </h2>
             </div>
-              {/* <SideBar cartData={cartData}></SideBar> */}
+              
               {
-                cartData.map(cart => <SideBar cart={cart}></SideBar>)
+                cartData.map(cart => <SideBar key={cart.id} cart={cart}></SideBar>)
               }
             
-            {/* <ToastContainer /> */}
+            
           </div>
         </div>
       </div>
