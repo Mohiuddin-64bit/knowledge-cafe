@@ -22,7 +22,7 @@ const SingleBlog = (props) => {
               </div>
             </div>
             <div>
-              <p>5 min read</p>
+              <p className="text-gray-500">{time} min read</p>
             </div>
           </div>
           <h2 className="card-title text-3xl">{title}</h2>
