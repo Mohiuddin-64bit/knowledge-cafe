@@ -12,7 +12,7 @@ const Blog = () => {
     <div>
       <div className="w-[90%] mx-auto mt-8">
         <div className="grid md:grid-cols-6 gap-8">
-          <div className="md:col-span-4 mb-8">
+          <div className="md:col-span-4 mb-8">  
             <div className="grid grid-cols-1 gap-4">
               {data.map((singleData) => (
                 <SingleBlog key={singleData.id} singleData={singleData} />
