@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import SideBar from "../SideBar/SideBar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const SingleBlog = (props) => {
+  const markAsRead = props.markAsRead;
   const addData = props.addData;
   const { photo, author, userPhoto, title, time } = props.singleData;
+  const [isRead, setIsRead] = useState(false);
+
+  const handleBookMark = () => {
+    if(isRead){
+      toast("You already marked as Bookmark")
+    }
+    else{
+      addData(props.singleData)
+      setIsRead(true);
+    }
+  }
+
   return (
     <div>
       <div className="card card-compact w-[800px] mx-auto bg-base-100 shadow-xl">
@@ -22,7 +39,7 @@ const SingleBlog = (props) => {
               </div>
             </div>
             <div>
-              <p className="text-gray-500">{time} min read</p>
+              <p className="text-gray-500">{time} min read <FontAwesomeIcon onClick={handleBookMark} icon={faBookmark} /> </p>
             </div>
           </div>
           <h2 className="card-title text-3xl">{title}</h2>
@@ -32,9 +49,10 @@ const SingleBlog = (props) => {
             </p>
           </div>
           <div className="card-actions">
-            <p onClick={() => addData(props.singleData)} className="text-blue-400 font-bold my-3 cursor-pointer">
-              Mark as read
+            <p onClick={() => markAsRead(time)} className="text-blue-400 font-bold my-3 cursor-pointer">
+            Mark as read
             </p>
+            <ToastContainer />
           </div>
         </div>
       </div>
