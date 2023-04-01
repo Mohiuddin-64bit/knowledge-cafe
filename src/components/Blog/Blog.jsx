@@ -6,6 +6,11 @@ const Blog = () => {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [totalTime, setTotalTime] = useState([]);
+  const [number, setNumber] = useState(0);
+
+  const increaseNumber = () => {
+    setNumber((prevNumber) => prevNumber + 1);
+  };
 
   useEffect(() => {
     fetch("Blogs.json")
@@ -40,15 +45,17 @@ const Blog = () => {
                   key={singleData.id}
                   singleData={singleData}
                   markAsRead={markAsRead}
+                  increaseNumber={increaseNumber}
                 />
               ))}
             </div>
           </div>
           <div className="md:col-span-2 border   rounded-md px-8">
-            <div className="border-2 border-cyan-400 h-16 w-full bg-gray-100 ">
+            <div className="border-2 border-cyan-400 rounded py-7 w-full bg-gray-100 ">
               <h2 className="text-2xl  font-bold text-center">
                 Spent Time on Reading: {setTimeTotal} min
               </h2>
+              <h2 className="text-2xl  font-bold text-center p-2 border-2 mt-4 bg-cyan-200">Bookmarked Blogs: {number}</h2>
             </div>
             {cartData.map((cart) => (
               <SideBar key={cart.id} cart={cart}></SideBar>

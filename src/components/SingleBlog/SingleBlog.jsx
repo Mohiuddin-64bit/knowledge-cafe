@@ -7,6 +7,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const SingleBlog = (props) => {
   const markAsRead = props.markAsRead;
+  const increaseNumber = props.increaseNumber;
   const addData = props.addData;
   const { photo, author, userPhoto, title, time } = props.singleData;
   const [isRead, setIsRead] = useState(false);
@@ -18,6 +19,7 @@ const SingleBlog = (props) => {
     else{
       addData(props.singleData)
       setIsRead(true);
+      increaseNumber()
     }
   }
 
