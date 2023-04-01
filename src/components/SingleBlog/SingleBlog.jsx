@@ -22,8 +22,8 @@ const SingleBlog = (props) => {
   }
 
   return (
-    <div>
-      <div className="card card-compact w-[800px] mx-auto bg-base-100 shadow-xl">
+    <div className="px-9">
+      <div className="card card-compact lg:w-[800px] mx-auto bg-base-100 shadow-xl">
         <figure>
           <img className="" src={photo} alt="" />
         </figure>

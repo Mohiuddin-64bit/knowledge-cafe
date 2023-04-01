@@ -31,8 +31,8 @@ const Blog = () => {
   return (
     <div className="container mx-auto">
       <div className="mx-auto mt-8">
-        <div className="grid md:grid-cols-6 gap-8">
-          <div className="md:col-span-4 mb-8">
+        <div className="grid lg:grid-cols-6 gap-8">
+          <div className="lg:col-span-4 mb-8">
             <div className="grid grid-cols-1 gap-4">
               {data.map((singleData) => (
                 <SingleBlog
@@ -44,7 +44,7 @@ const Blog = () => {
               ))}
             </div>
           </div>
-          <div className="md:col-span-2 border rounded-md">
+          <div className="md:col-span-2 border   rounded-md px-8">
             <div className="border-2 border-cyan-400 h-16 w-full bg-gray-100 ">
               <h2 className="text-2xl  font-bold text-center">
                 Spent Time on Reading: {setTimeTotal} min
